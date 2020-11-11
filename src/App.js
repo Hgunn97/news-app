@@ -1,11 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Container, Header, Body, Title} from 'native-base';
+
+import PoliticsCard from './Components/PoliticsCard';
+import SportsCard from './Components/SportsCard';
 
 function App() {
   return (
-    <View>
-      <Text>Hello, World</Text>
-    </View>
+    <Container>
+      <Header>
+        <Body>
+          <Title>News</Title>
+        </Body>
+      </Header>
+      <PoliticsCard />
+      <SportsCard />
+    </Container>
   );
 }
 
