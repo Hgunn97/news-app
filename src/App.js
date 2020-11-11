@@ -1,20 +1,19 @@
 import React from 'react';
-import {Container, Header, Body, Title} from 'native-base';
 
-import PoliticsCard from './Components/PoliticsCard';
-import SportsCard from './Components/SportsCard';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import Home from './Components/Home';
+
+const Stack = createStackNavigator();
 
 function App() {
   return (
-    <Container>
-      <Header>
-        <Body>
-          <Title>News</Title>
-        </Body>
-      </Header>
-      <PoliticsCard />
-      <SportsCard />
-    </Container>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
