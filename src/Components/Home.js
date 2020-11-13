@@ -1,15 +1,15 @@
 import React from 'react';
-import {Container, Header, Body, Title} from 'native-base';
+import {View} from 'react-native';
 
 import PoliticsCard from './PoliticsCard';
 import SportsCard from './SportsCard';
 
 function Home() {
   return (
-    <Container>
+    <View>
       <PoliticsCard />
       <SportsCard />
-    </Container>
+    </View>
   );
 }
 
