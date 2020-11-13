@@ -29,3 +29,8 @@ export const colours = {
   white: '#FFFFFF',
   black: '#000000',
 };
+
+export const fontSize = {
+  sm: 14,
+  md: 19,
+};

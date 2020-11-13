@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, Text, Linking, ScrollView} from 'react-native';
-import * as rssParser from 'react-native-rss-parser';
+import {ScrollView} from 'react-native';
 
 import {getData} from './NewsFunctions.js';
 import {renderNews} from './NewsFunctions.js';
