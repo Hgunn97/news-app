@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Linking} from 'react-native';
+import {View, Text, Linking, ScrollView} from 'react-native';
 import * as rssParser from 'react-native-rss-parser';
 
 class PoliticsScreen extends React.Component {
@@ -37,7 +37,7 @@ class PoliticsScreen extends React.Component {
     });
   }
   render() {
-    return <View>{this.renderNews()}</View>;
+    return <ScrollView>{this.renderNews()}</ScrollView>;
   }
 }
 
