@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Linking, ScrollView} from 'react-native';
 import * as rssParser from 'react-native-rss-parser';
 
-class PoliticsScreen extends React.Component {
+class SportsScreen extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -10,18 +10,17 @@ class PoliticsScreen extends React.Component {
     };
   }
   async componentDidMount() {
-    fetch('http://feeds.bbci.co.uk/news/politics/rss.xml')
+    fetch('http://feeds.bbci.co.uk/sport/football/rss.xml')
       .then((response) => response.text())
       .then((responseData) => rssParser.parse(responseData))
       .then((feed) => {
-        console.log(feed.items[1]);
         this.setState({feed: feed.items});
         console.log(`State is: ${this.state.feed[1].title}`);
         console.log(`State is: ${this.state.feed[1].description}`);
         console.log(`Link is ${this.state.feed[1].id}`);
       });
   }
-  renderNews() {
+  renderSports() {
     return this.state.feed.map((item, i) => {
       return (
         <View key={i}>
@@ -37,8 +36,8 @@ class PoliticsScreen extends React.Component {
     });
   }
   render() {
-    return <ScrollView>{this.renderNews()}</ScrollView>;
+    return <ScrollView>{this.renderSports()}</ScrollView>;
   }
 }
 
-export default PoliticsScreen;
+export default SportsScreen;
