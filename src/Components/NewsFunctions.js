@@ -28,7 +28,7 @@ export async function getData(url) {
   }
 }
 
-export function renderNews(feed, image) {
+export function renderNews(feed) {
   return feed.map((item, i) => {
     return (
       <View key={i}>
@@ -44,7 +44,7 @@ export function renderNews(feed, image) {
             </CardItem>
             <CardItem cardBody>
               <Image
-                source={image}
+                source={item.photo}
                 style={{height: 200, width: null, flex: 1}}
               />
             </CardItem>
