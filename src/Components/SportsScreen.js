@@ -4,31 +4,33 @@ import {ScrollView} from 'react-native';
 import {getData} from './NewsFunctions.js';
 import {renderNews} from './NewsFunctions.js';
 
-import {IMAGENAME2} from '../images';
+import {IMAGENAME2} from '../res/images';
 
 class SportsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       feed: [],
-      photo: '',
     };
   }
-  async componentDidMount() {
+  componentDidMount() {
     this.getNews();
   }
   async getNews() {
-    getData('http://feeds.bbci.co.uk/sport/football/rss.xml').then((data) => {
-      this.setState({
-        feed: data,
-        photo: IMAGENAME2,
-      });
+    let data = await getData('http://feeds.bbci.co.uk/sport/football/rss.xml')
+    let feedData = await this.getPhoto(data);
+    this.setState({
+      feed: feedData,
     });
   }
+  getPhoto(data) {
+    data.map((item, i) => {
+      item.photo = IMAGENAME2;
+    });
+    return data;
+  }
   render() {
-    return (
-      <ScrollView>{renderNews(this.state.feed, this.state.photo)}</ScrollView>
-    );
+    return <ScrollView>{renderNews(this.state.feed)}</ScrollView>;
   }
 }
 
