@@ -1,11 +1,11 @@
 import React from 'react';
 import {Text, StyleSheet, Image} from 'react-native';
 import {Card, Button} from 'react-native-elements';
-import {margin} from '../styles/base.js';
-import {button} from '../styles/cards.js';
+import {margin} from '../res/styles/base.js';
+import {button} from '../res/styles/cards.js';
 import {useNavigation} from '@react-navigation/native';
 
-import {IMAGENAME} from '../images';
+import {IMAGENAME} from '../res/images';
 
 function PoliticsCard() {
   const navigation = useNavigation();

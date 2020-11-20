@@ -12,10 +12,10 @@ import {
   Left,
   Right,
 } from 'native-base';
-import {colours, fontSize, margin} from '../styles/base';
-import {button} from '../styles/cards';
+import {colours, fontSize, margin} from '../res/styles/base';
+import {button} from '../res/styles/cards';
 
-import {IMAGENAME} from '../images';
+import {IMAGENAME} from '../res/images';
 
 export async function getData(url) {
   let response = await fetch(url);

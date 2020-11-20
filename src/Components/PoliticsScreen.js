@@ -4,9 +4,9 @@ import {ScrollView} from 'react-native';
 import {getData} from './NewsFunctions';
 import {renderNews} from './NewsFunctions';
 
-import {IMAGENAME} from '../images';
-import {covidImg} from '../images';
-import {boris1} from '../images';
+import {IMAGENAME} from '../res/images';
+import {covidImg} from '../res/images';
+import {boris1} from '../res/images';
 
 class PoliticsScreen extends React.Component {
   constructor() {

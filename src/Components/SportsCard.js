@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {Card, Button} from 'react-native-elements';
-import {margin} from '../styles/base.js';
-import {button} from '../styles/cards.js';
+import {margin} from '../res/styles/base.js';
+import {button} from '../res/styles/cards.js';
 import {useNavigation} from '@react-navigation/native';
 
 function SportsCard() {
