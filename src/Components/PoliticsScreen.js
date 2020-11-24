@@ -4,9 +4,14 @@ import {ScrollView} from 'react-native';
 import {getData} from './NewsFunctions';
 import {renderNews} from './NewsFunctions';
 
-import {IMAGENAME} from '../res/images';
+import {brexitImg} from '../res/images';
 import {covidImg} from '../res/images';
-import {boris1} from '../res/images';
+import {borisImg} from '../res/images';
+import {starmerImg} from '../res/images';
+import {toryImg} from '../res/images';
+import {labourImg} from '../res/images';
+import {otherImg} from '../res/images';
+
 
 class PoliticsScreen extends React.Component {
   constructor() {
@@ -28,15 +33,23 @@ class PoliticsScreen extends React.Component {
   }
   getPhoto(data) {
     data.map((item, i) => {
+      let indexN = Math.floor(Math.random() * 5);
       let covidTxt = ['Covid', 'Coronavirus'];
       let covidTest = covidTxt.some((el) => item.title.includes(el));
       if (covidTest === true) {
-        let indexN = Math.floor(Math.random() * covidImg.length);
         item.photo = covidImg[indexN];
       } else if (item.title.includes('Boris')) {
-        item.photo = boris1;
+        item.photo = borisImg[indexN];
+      } else if (item.title.includes('Brexit')) {
+        item.photo = brexitImg[indexN];
+      } else if (item.title.includes('Starmer')) {
+        item.photo = starmerImg[indexN];
+      } else if (item.title.includes('Tory')) {
+        item.photo = toryImg[indexN];
+      } else if (item.title.includes('Labour')) {
+        item.photo = labourImg[indexN];
       } else {
-        item.photo = IMAGENAME;
+        item.photo = otherImg;
       }
     });
     return data;
